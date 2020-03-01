@@ -1,5 +1,5 @@
 import React from 'react';
-import App from '../App';
+import App from '../app/App';
 import {shallow} from "enzyme";
 import {NavBar} from "../components/NavBar";
 

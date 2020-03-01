@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {createMuiTheme, CssBaseline, responsiveFontSizes, ThemeProvider} from "@material-ui/core";
-import {ThemeTypes} from "./types";
-import {NavBar} from "./components/NavBar";
+import {ThemeTypes} from "../types";
+import {NavBar} from "../components/NavBar";
 
 const App = () => {
   const [themeType, setThemeType] = useState(ThemeTypes.DARK);
