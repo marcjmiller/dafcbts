@@ -1,10 +1,15 @@
-import React, {useState} from 'react';
-import {createMuiTheme, CssBaseline, responsiveFontSizes, ThemeProvider} from "@material-ui/core";
-import {ThemeTypes} from "../types";
-import {NavBar} from "../components/NavBar";
+import React from 'react';
+import { createMuiTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@material-ui/core';
+import { NavBar } from '../components/NavBar';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../store/reducer';
+import { toggleTheme } from '../store/reducer/themeSlice';
 
-const App = () => {
-  const [themeType, setThemeType] = useState(ThemeTypes.DARK);
+const App: React.FC = () => {
+  const dispatch = useDispatch();
+  const { themeType } = useSelector(
+    (state: RootState) => state.theme,
+  );
 
   const theme = createMuiTheme({
     palette: {
@@ -15,8 +20,7 @@ const App = () => {
   const muiTheme = responsiveFontSizes(theme);
 
   const toggleThemeType = () => {
-    let newThemeType = (themeType === ThemeTypes.DARK ? ThemeTypes.LIGHT : ThemeTypes.DARK);
-    setThemeType(newThemeType);
+    dispatch(toggleTheme())
   };
 
   return (

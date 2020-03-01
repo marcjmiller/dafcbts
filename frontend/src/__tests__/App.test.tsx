@@ -1,13 +1,19 @@
 import React from 'react';
 import App from '../app/App';
-import {shallow} from "enzyme";
-import {NavBar} from "../components/NavBar";
+import { mount } from 'enzyme';
+import { NavBar } from '../components/NavBar';
+import { Provider } from 'react-redux';
+import { store } from '../store';
 
 describe('App unit tests', () => {
-  const wrapper = shallow(<App/>);
+  const wrapper = mount(
+    <Provider store={store}>
+      <App/>
+    </Provider>,
+  );
 
   it('should render "Hello World"', () => {
-    expect(wrapper.find('div').html()).toMatch(/Hello World/);
+    expect(wrapper.find('div').at(0).html()).toMatch(/Hello World/);
   });
 
   it('should contain the NavBar component', () => {

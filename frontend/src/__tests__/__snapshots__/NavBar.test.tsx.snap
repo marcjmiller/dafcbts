@@ -29,7 +29,19 @@ exports[`NavBar tests should match the snapshot 1`] = `
       </WithStyles(ForwardRef(Button))>
       <WithStyles(ForwardRef(IconButton))
         color="inherit"
-        onClick={[MockFunction]}
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
       >
         <Brightness7Icon />
       </WithStyles(ForwardRef(IconButton))>

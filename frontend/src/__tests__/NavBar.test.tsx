@@ -1,13 +1,13 @@
-import React from "react";
-import {NavBar} from "../components/NavBar";
-import {shallow} from "enzyme";
-import {AppBar, Button, IconButton} from "@material-ui/core";
-import Brightness7Icon from "@material-ui/icons/Brightness7";
+import React from 'react';
+import { NavBar } from '../components/NavBar';
+import { shallow } from 'enzyme';
+import { AppBar, Button, IconButton } from '@material-ui/core';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
 import MenuIcon from '@material-ui/icons/Menu';
-import {ThemeTypes} from "../types";
+import { ThemeTypes } from '../types';
 
 
-describe('NavBar tests', () => {
+describe('NavBar unit tests', () => {
   const themeType = ThemeTypes.DARK;
   const toggleThemeTypeSpy = jest.fn();
   const wrapper = shallow(<NavBar themeType={themeType} toggleThemeType={toggleThemeTypeSpy}/>);

@@ -1,10 +1,10 @@
-import {AppBar, Button, createStyles, IconButton, Theme, Toolbar, Typography} from "@material-ui/core";
+import { AppBar, Button, createStyles, IconButton, Theme, Toolbar, Typography } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import Brightness7Icon from "@material-ui/icons/Brightness7";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
-import {makeStyles} from "@material-ui/core/styles";
-import * as React from "react";
-import {ThemeTypes} from "../types";
+import Brightness7Icon from '@material-ui/icons/Brightness7';
+import Brightness4Icon from '@material-ui/icons/Brightness4';
+import { makeStyles } from '@material-ui/core/styles';
+import * as React from 'react';
+import { ThemeTypes } from '../types';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,7 +33,7 @@ export const NavBar: React.FC<OwnProps> = (props) => {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
+            <MenuIcon/>
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             DumbAFCbts

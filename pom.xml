@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <frontend-maven-plugin.version>1.9.1</frontend-maven-plugin.version>
         <node.version>v13.9.0</node.version>
-        <npm.version>6.13.7</npm.version>
+        <yarn.version>v1.21.1</yarn.version>
         <frontend.dir>frontend</frontend.dir>
         <target.dir>target</target.dir>
         <jupiter.version>5.5.1</jupiter.version>
@@ -80,9 +80,7 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
         </dependency>
-
     </dependencies>
-
 
     <profiles>
         <profile>
@@ -108,27 +106,29 @@
                             <execution>
                                 <id>Install Node/Yarn</id>
                                 <goals>
-                                    <goal>install-node-and-npm</goal>
+                                    <goal>install-node-and-yarn</goal>
                                 </goals>
                                 <configuration>
                                     <nodeVersion>${node.version}</nodeVersion>
-<!--                                    <npmVersion>${npm.version}</npmVersion>-->
+                                    <yarnVersion>${yarn.version}</yarnVersion>
                                 </configuration>
                             </execution>
 
                             <execution>
                                 <id>Install dependencies</id>
                                 <goals>
-                                    <goal>npm</goal>
+                                    <goal>yarn</goal>
                                 </goals>
+                                <configuration>
+                                    <arguments>install</arguments>
+                                </configuration>
                             </execution>
 
                             <execution>
                                 <id>Run Front-End Tests</id>
                                 <goals>
-                                    <goal>npm</goal>
+                                    <goal>yarn</goal>
                                 </goals>
-                                <phase>compile</phase>
                                 <configuration>
                                     <arguments>run test-once</arguments>
                                 </configuration>
@@ -137,10 +137,10 @@
                             <execution>
                                 <id>Build Output Files</id>
                                 <goals>
-                                    <goal>npm</goal>
+                                    <goal>yarn</goal>
                                 </goals>
                                 <configuration>
-                                    <arguments>run build</arguments>
+                                    <arguments>build</arguments>
                                 </configuration>
                             </execution>
                         </executions>
@@ -172,7 +172,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <spring.profiles.active>dev</spring.profiles.active>
+                <spring.profiles.active>prod</spring.profiles.active>
             </properties>
         </profile>
     </profiles>
