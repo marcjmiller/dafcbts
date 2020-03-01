@@ -2,6 +2,7 @@
   <configuration default="false" name="DafcbtsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
     <module name="dafcbts" />
     <option name="SPRING_BOOT_MAIN_CLASS" value="com.dumbafcbts.dafcbts.DafcbtsApplication" />
+    <option name="HIDE_BANNER" value="true" />
     <option name="ACTIVE_PROFILES" value="dev" />
     <option name="ALTERNATIVE_JRE_PATH" />
     <envs>

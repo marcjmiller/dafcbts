@@ -369,7 +369,7 @@ exports[`App unit tests should match the snapshot 1`] = `
       <div
         className="App"
       >
-        <NavBar
+        <Component
           themeType="dark"
           toggleThemeType={[Function]}
         >
@@ -899,7 +899,7 @@ exports[`App unit tests should match the snapshot 1`] = `
               </ForwardRef(AppBar)>
             </WithStyles(ForwardRef(AppBar))>
           </div>
-        </NavBar>
+        </Component>
         <header
           className="App-header"
         >
