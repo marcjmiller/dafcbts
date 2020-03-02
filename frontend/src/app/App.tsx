@@ -3,14 +3,14 @@ import { createMuiTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from 
 import { NavBar } from '../components/NavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/reducer';
-import { toggleTheme } from '../store/reducer/themeSlice';
-import { getCbts } from '../store/reducer/cbtSlice';
+import { toggleTheme } from '../store/reducer/slices/themeSlice';
+import { fetchAllCbts } from '../store/actions';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
 
   useLayoutEffect(() => {
-      dispatch(getCbts());
+      dispatch(fetchAllCbts());
   });
 
   const { themeType } = useSelector(

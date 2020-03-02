@@ -15,12 +15,11 @@ public class CbtController {
   public CbtController(CbtRepository cbtRepository) {
     this.cbtRepository = cbtRepository;
   }
-
   
   @GetMapping(path = "/cbts")
   public List<Cbt> getCbts() {
-    Cbt cbt1 = new Cbt(new CbtJson("CBTs for Dummies", "how to take CBTs", "http://www.google.com", "TheInternet"));
-    Cbt cbt2 = new Cbt(new CbtJson("CBTs for Dummies pt 2", "how to take CBTs v2", "http://www.google.com", "TheInternet"));
+    Cbt cbt1 = new Cbt(1,"CBTs for Dummies", "how to take CBTs", "http://www.google.com", "TheInternet");
+    Cbt cbt2 = new Cbt(2,"CBTs for Dummies pt 2", "how to take CBTs v2", "http://www.google.com", "TheInternet");
     List<Cbt> cbtList = new ArrayList<Cbt>();
     cbtList.add(cbt1);
     cbtList.add(cbt2);

@@ -20,7 +20,7 @@ public class CbtRepositoryTest {
   @Test
   public void whenFindByName_thenReturnCbt() {
     // given
-    Cbt cbt = new Cbt("Rest4Dummies", "All about Rest", "http://www.google.com", "Google");
+    Cbt cbt = new Cbt(1, "Rest4Dummies", "All about Rest", "http://www.google.com", "Google");
     
     testEntityManager.persist(cbt);
     testEntityManager.flush();

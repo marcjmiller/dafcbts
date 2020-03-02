@@ -12,11 +12,10 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
-@Table(name = "cbts")
 public class Cbt {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private long id;
+  private Long id;
   
   private String name;
   private String description;
@@ -30,7 +29,8 @@ public class Cbt {
     this.cbtSource = cbtJson.getCbtSource();
   }
   
-  public Cbt(String name, String description, String webAddress, String cbtSource) {
+  public Cbt(long id, String name, String description, String webAddress, String cbtSource) {
+    this.id = id;
     this.name = name;
     this.description = description;
     this.webAddress = webAddress;

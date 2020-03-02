@@ -1,6 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import themeReducer from './themeSlice';
-import cbtReducer from './cbtSlice';
+import themeReducer from './slices/themeSlice';
+import cbtReducer from './slices/cbtSlice';
 
 export const rootReducer = combineReducers({ theme: themeReducer, cbts: cbtReducer });
 

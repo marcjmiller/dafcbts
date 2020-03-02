@@ -11,6 +11,7 @@ public class CbtTest {
   @BeforeEach
   public void setupTests() {
     cbt = new Cbt(
+        0,
         "Name",
         "Description",
         "Web Address",
