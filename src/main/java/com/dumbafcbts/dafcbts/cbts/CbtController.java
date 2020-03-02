@@ -1,9 +1,9 @@
 package com.dumbafcbts.dafcbts.cbts;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -15,10 +15,17 @@ public class CbtController {
   public CbtController(CbtRepository cbtRepository) {
     this.cbtRepository = cbtRepository;
   }
+
   
   @GetMapping(path = "/cbts")
   public List<Cbt> getCbts() {
-    return cbtRepository.findAll();
+    Cbt cbt1 = new Cbt(new CbtJson("CBTs for Dummies", "how to take CBTs", "http://www.google.com", "TheInternet"));
+    Cbt cbt2 = new Cbt(new CbtJson("CBTs for Dummies pt 2", "how to take CBTs v2", "http://www.google.com", "TheInternet"));
+    List<Cbt> cbtList = new ArrayList<Cbt>();
+    cbtList.add(cbt1);
+    cbtList.add(cbt2);
+    return cbtList;
+//    return cbtRepository.findAll();
   }
   
   @PostMapping(path = "/cbts/post")

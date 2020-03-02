@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
 import { createMuiTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@material-ui/core';
 import { NavBar } from '../components/NavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/reducer';
 import { toggleTheme } from '../store/reducer/themeSlice';
+import { getCbts } from '../store/reducer/cbtSlice';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
+
+  useLayoutEffect(() => {
+      dispatch(getCbts());
+  });
+
   const { themeType } = useSelector(
     (state: RootState) => state.theme,
   );
+
+  // const { cbts } = useSelector(
+  //   (state: RootState) => state.cbts,
+  // );
 
   const theme = createMuiTheme({
     palette: {
@@ -19,8 +29,9 @@ const App: React.FC = () => {
 
   const muiTheme = responsiveFontSizes(theme);
 
+
   const toggleThemeType = () => {
-    dispatch(toggleTheme())
+    dispatch(toggleTheme());
   };
 
   return (
