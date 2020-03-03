@@ -5,7 +5,7 @@ interface ThemeState {
   themeType: ThemeTypes.DARK | ThemeTypes.LIGHT
 }
 
-const initialState: ThemeState = {
+export const initialState: ThemeState = {
   themeType: ThemeTypes.DARK,
 };
 
@@ -13,7 +13,7 @@ const themeSlice = createSlice({
   name: 'theme',
   initialState,
   reducers: {
-    toggleTheme(state) {
+    toggleThemeType(state) {
       if (state.themeType === ThemeTypes.DARK) {
         state.themeType = ThemeTypes.LIGHT
       } else {
@@ -23,6 +23,6 @@ const themeSlice = createSlice({
   },
 });
 
-export const { toggleTheme } = themeSlice.actions;
+export const { toggleThemeType } = themeSlice.actions;
 
 export default themeSlice.reducer;

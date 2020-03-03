@@ -3,7 +3,7 @@ import { createMuiTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from 
 import { NavBar } from '../components/NavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/reducer';
-import { toggleTheme } from '../store/reducer/slices/themeSlice';
+import { toggleThemeType } from '../store/reducer/slices/themeSlice';
 import { fetchAllCbts } from '../store/actions';
 
 const App: React.FC = () => {
@@ -17,9 +17,9 @@ const App: React.FC = () => {
     (state: RootState) => state.theme,
   );
 
-  // const { cbts } = useSelector(
-  //   (state: RootState) => state.cbts,
-  // );
+  const { cbts, error, loading } = useSelector(
+    (state: RootState) => state.cbts,
+  );
 
   const theme = createMuiTheme({
     palette: {
@@ -29,19 +29,15 @@ const App: React.FC = () => {
 
   const muiTheme = responsiveFontSizes(theme);
 
-
-  const toggleThemeType = () => {
-    dispatch(toggleTheme());
+  const toggleTheme = () => {
+    dispatch(toggleThemeType());
   };
 
   return (
     <ThemeProvider theme={muiTheme}>
       <CssBaseline/>
       <div className="App">
-        <NavBar themeType={themeType} toggleThemeType={toggleThemeType}/>
-        <header className="App-header">
-          Hello World
-        </header>
+        <NavBar themeType={themeType} toggleTheme={toggleTheme}/>
       </div>
     </ThemeProvider>
   );

@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 interface OwnProps {
   themeType: string;
-  toggleThemeType: () => void;
+  toggleTheme: () => void;
 }
 
 export const NavBar: React.FC<OwnProps> = (props) => {
@@ -39,7 +39,7 @@ export const NavBar: React.FC<OwnProps> = (props) => {
             DumbAFCbts
           </Typography>
           <Button color="inherit">Login</Button>
-          <IconButton color="inherit" onClick={props.toggleThemeType}>
+          <IconButton color="inherit" onClick={props.toggleTheme}>
             {
               props.themeType === ThemeTypes.DARK ?
                 <Brightness7Icon/>
