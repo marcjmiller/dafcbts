@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React from 'react';
 import { createMuiTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@material-ui/core';
 import { NavBar } from '../components/NavBar';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,9 +9,9 @@ import { fetchAllCbts } from '../store/actions';
 const App: React.FC = () => {
   const dispatch = useDispatch();
 
-  useLayoutEffect(() => {
-      dispatch(fetchAllCbts());
-  });
+  setTimeout(() => {
+    dispatch(fetchAllCbts());
+  }, 500);
 
   const { themeType } = useSelector(
     (state: RootState) => state.theme,

@@ -3,9 +3,9 @@ import { getCbtsFailed, getCbtsSuccess } from '../reducer/slices/cbtSlice';
 
 const axios = require('axios').default;
 
-export async function getCbts() {
+export function getCbts() {
   const url = 'api/cbts';
-  const { data } = await axios.get(url);
+  const { data } = axios.get(url);
   return data;
 }
 
