@@ -371,7 +371,7 @@ exports[`App unit tests should match the snapshot 1`] = `
       >
         <Component
           themeType="dark"
-          toggleThemeType={[Function]}
+          toggleTheme={[Function]}
         >
           <div
             className="makeStyles-root-1"

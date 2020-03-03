@@ -1,11 +1,11 @@
-import reducer, { getCbtsSuccess, initialState, getCbtsFailed } from '../../store/reducer/slices/cbtSlice';
+import reducer, { getCbtsSuccess, getCbtsFailed, InitCbtState } from '../../store/reducer/slices/cbtSlice';
 import { CbtModel } from '../../models/CbtModel';
 
 describe('CbtReducer tests', () => {
   it('should return the initial state', () => {
     const result = reducer(undefined, { type: '' });
 
-    expect(result).toEqual(initialState);
+    expect(result).toEqual(InitCbtState);
   });
 
   it('should should load cbts when returned from the API', () => {
@@ -14,7 +14,7 @@ describe('CbtReducer tests', () => {
       new CbtModel(2, 'name2', 'description2', 'address2', 'source2'),
       new CbtModel(3, 'name3', 'description3', 'address3', 'source3'),
     ];
-    const nextState = reducer(initialState, getCbtsSuccess(data));
+    const nextState = reducer(InitCbtState, getCbtsSuccess(data));
 
     expect(nextState.cbts).toEqual(data);
     expect(nextState.loading).toEqual(false);
@@ -23,7 +23,7 @@ describe('CbtReducer tests', () => {
 
   it('should send Error messages to state on error', () => {
     const data = "This is an error message";
-    const nextState = reducer(initialState, getCbtsFailed(data))
+    const nextState = reducer(InitCbtState, getCbtsFailed(data));
 
     expect(nextState.cbts).toEqual([]);
     expect(nextState.loading).toEqual(false);

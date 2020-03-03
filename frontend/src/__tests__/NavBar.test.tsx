@@ -9,8 +9,8 @@ import { ThemeTypes } from '../types';
 
 describe('NavBar unit tests', () => {
   const themeType = ThemeTypes.DARK;
-  const toggleThemeTypeSpy = jest.fn();
-  const wrapper = shallow(<NavBar themeType={themeType} toggleThemeType={toggleThemeTypeSpy}/>);
+  const toggleThemeSpy = jest.fn();
+  const wrapper = shallow(<NavBar themeType={themeType} toggleTheme={toggleThemeSpy}/>);
 
   it('should display a button to open the menu', () => {
     expect(wrapper.find(MenuIcon).exists()).toBeTruthy();
@@ -28,7 +28,7 @@ describe('NavBar unit tests', () => {
     expect(wrapper.find(IconButton).at(1).exists()).toBeTruthy();
     expect(wrapper.find(Brightness7Icon).exists()).toBeTruthy();
     wrapper.find(IconButton).at(1).simulate('click');
-    expect(toggleThemeTypeSpy).toHaveBeenCalled();
+    expect(toggleThemeSpy).toHaveBeenCalled();
   });
 
   it('should match the snapshot', () => {

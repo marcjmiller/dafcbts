@@ -7,7 +7,7 @@ interface CbtState {
   loading: boolean,
 }
 
-export const initialState: CbtState = {
+const initialState: CbtState = {
   cbts: [],
   error: null,
   loading: true
@@ -33,3 +33,5 @@ const cbtSlice = createSlice({
 export const { getCbtsSuccess, getCbtsFailed } = cbtSlice.actions;
 
 export default cbtSlice.reducer;
+
+export const InitCbtState = initialState;
