@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "codeceptjs": "^2.5.0",
+    "puppeteer": "^2.1.1"
+  },
+  "scripts": {
+    "acc_steps": "yarn codeceptjs run --steps",
+    "acc": "yarn codeceptjs run"
+  }
+}

@@ -57,6 +57,7 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${jupiter.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -79,6 +80,7 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -175,6 +177,7 @@
                 <spring.profiles.active>prod</spring.profiles.active>
             </properties>
         </profile>
+
         <profile>
             <id>test</id>
             <build>
@@ -204,6 +207,7 @@
                                     <nodeVersion>${node.version}</nodeVersion>
                                     <yarnVersion>${yarn.version}</yarnVersion>
                                 </configuration>
+                                <phase>install</phase>
                             </execution>
 
                             <execution>
@@ -214,6 +218,7 @@
                                 <configuration>
                                     <arguments>install</arguments>
                                 </configuration>
+                                <phase>install</phase>
                             </execution>
 
                             <execution>
@@ -224,6 +229,7 @@
                                 <configuration>
                                     <arguments>run test-once</arguments>
                                 </configuration>
+                                <phase>test</phase>
                             </execution>
                         </executions>
                     </plugin>

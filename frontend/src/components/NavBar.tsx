@@ -47,7 +47,6 @@ export const NavBar: React.FC<OwnProps> = (props) => {
                 <Brightness4Icon/>
             }
           </IconButton>
-
         </Toolbar>
       </AppBar>
     </div>
