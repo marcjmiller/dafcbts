@@ -207,7 +207,6 @@
                                     <nodeVersion>${node.version}</nodeVersion>
                                     <yarnVersion>${yarn.version}</yarnVersion>
                                 </configuration>
-                                <phase>install</phase>
                             </execution>
 
                             <execution>
@@ -218,7 +217,6 @@
                                 <configuration>
                                     <arguments>install</arguments>
                                 </configuration>
-                                <phase>install</phase>
                             </execution>
 
                             <execution>
@@ -227,9 +225,30 @@
                                     <goal>yarn</goal>
                                 </goals>
                                 <configuration>
-                                    <arguments>run test-once</arguments>
+                                    <arguments>jest</arguments>
                                 </configuration>
                                 <phase>test</phase>
+                            </execution>
+                        </executions>
+                    </plugin>
+
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.8</version>
+                        <executions>
+                            <execution>
+                                <phase>generate-resources</phase>
+                                <configuration>
+                                    <target>
+                                        <copy todir="${project.build.directory}/classes/public">
+                                            <fileset dir="${project.basedir}/frontend/build"/>
+                                        </copy>
+                                    </target>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
                             </execution>
                         </executions>
                     </plugin>

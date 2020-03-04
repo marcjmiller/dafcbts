@@ -24,7 +24,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test-once": "jest test",
     "test": "jest test",
     "eject": "react-scripts eject"
   },
