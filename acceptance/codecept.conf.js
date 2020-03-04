@@ -9,8 +9,8 @@ exports.config = {
   output: './output',
   helpers: {
     Puppeteer: {
-      url: 'http://localhost:9090',
-      show: false
+      url: 'http://localhost:8585',
+      show: true
     }
   },
   include: {

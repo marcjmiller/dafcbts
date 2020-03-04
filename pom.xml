@@ -220,6 +220,16 @@
                             </execution>
 
                             <execution>
+                                <id>Build Output Files</id>
+                                <goals>
+                                    <goal>yarn</goal>
+                                </goals>
+                                <configuration>
+                                    <arguments>build</arguments>
+                                </configuration>
+                            </execution>
+
+                            <execution>
                                 <id>Run Front-End Tests</id>
                                 <goals>
                                     <goal>yarn</goal>
@@ -238,7 +248,7 @@
                         <version>1.8</version>
                         <executions>
                             <execution>
-                                <phase>generate-resources</phase>
+                                <phase>package</phase>
                                 <configuration>
                                     <target>
                                         <copy todir="${project.build.directory}/classes/public">

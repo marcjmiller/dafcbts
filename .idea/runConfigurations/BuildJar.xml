@@ -12,7 +12,7 @@
             <list>
               <option value="-Dmaven.test.skip=true" />
               <option value="-DskipTests" />
-              <option value="install" />
+              <option value="package" />
             </list>
           </option>
           <option name="pomFileName" />

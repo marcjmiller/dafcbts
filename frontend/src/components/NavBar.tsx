@@ -39,16 +39,14 @@ export const NavBar: React.FC<OwnProps> = (props) => {
             DumbAFCbts
           </Typography>
           <Button color="inherit">Login</Button>
-          <IconButton color="inherit" onClick={props.toggleTheme}>
-            {
-              props.themeType === ThemeTypes.DARK ?
-                <Brightness7Icon/>
-                :
-                <Brightness4Icon/>
-            }
-          </IconButton>
+          <div className={'themeToggle'} onClick={props.toggleTheme}>
+            <IconButton color="inherit">
+              {props.themeType === ThemeTypes.DARK ?
+                <Brightness7Icon/> : <Brightness4Icon/>}
+            </IconButton>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
   );
-}
+};

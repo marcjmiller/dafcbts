@@ -2,7 +2,7 @@
   <configuration default="false" name="Run Jar" type="JarApplication">
     <option name="JAR_PATH" value="$PROJECT_DIR$/target/dafcbts-0.0.1-SNAPSHOT.jar" />
     <option name="VM_PARAMETERS" value="-Dspring.profiles.active=test" />
-    <option name="PROGRAM_PARAMETERS" value="--server.port=9090" />
+    <option name="PROGRAM_PARAMETERS" value="--server.port=8585" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
     <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
