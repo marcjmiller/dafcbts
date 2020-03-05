@@ -27,8 +27,8 @@ exports[`NavBar unit tests should match the snapshot 1`] = `
       >
         Login
       </WithStyles(ForwardRef(Button))>
-      <WithStyles(ForwardRef(IconButton))
-        color="inherit"
+      <div
+        className="themeToggle"
         onClick={
           [MockFunction] {
             "calls": Array [
@@ -43,8 +43,16 @@ exports[`NavBar unit tests should match the snapshot 1`] = `
           }
         }
       >
-        <Brightness7Icon />
-      </WithStyles(ForwardRef(IconButton))>
+        <WithStyles(ForwardRef(IconButton))
+          color="inherit"
+        >
+          <div
+            className="toggle-light"
+          >
+            <Brightness7Icon />
+          </div>
+        </WithStyles(ForwardRef(IconButton))>
+      </div>
     </WithStyles(ForwardRef(Toolbar))>
   </WithStyles(ForwardRef(AppBar))>
 </div>

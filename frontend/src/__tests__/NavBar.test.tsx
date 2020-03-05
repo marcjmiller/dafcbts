@@ -25,9 +25,9 @@ describe('NavBar unit tests', () => {
   });
 
   it('should display a button that toggles the theme on press', () => {
-    expect(wrapper.find(IconButton).at(1).exists()).toBeTruthy();
+    expect(wrapper.find('.themeToggle').exists()).toBeTruthy();
     expect(wrapper.find(Brightness7Icon).exists()).toBeTruthy();
-    wrapper.find(IconButton).at(1).simulate('click');
+    wrapper.find('.themeToggle').simulate('click');
     expect(toggleThemeSpy).toHaveBeenCalled();
   });
 
