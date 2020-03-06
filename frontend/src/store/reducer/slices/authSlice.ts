@@ -61,10 +61,14 @@ const authSlice = createSlice({
       state.user = InitUserState;
       state.error = null;
     },
+
+    resetSignIn(state) {
+      state.authStep = AuthStep.INIT_STATE;
+    },
   },
 });
 
-export const { signInStart, signInSuccess, signInFailure, signOut } = authSlice.actions;
+export const { signInStart, signInSuccess, signInFailure, signOut, resetSignIn } = authSlice.actions;
 
 export default authSlice.reducer;
 

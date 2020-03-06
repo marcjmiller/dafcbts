@@ -227,97 +227,43 @@ exports[`App unit tests should match the snapshot 1`] = `
             "fontWeightMedium": 500,
             "fontWeightRegular": 400,
             "h1": Object {
-              "@media (min-width:1280px)": Object {
-                "fontSize": "5.9983rem",
-              },
-              "@media (min-width:600px)": Object {
-                "fontSize": "4.7129rem",
-              },
-              "@media (min-width:960px)": Object {
-                "fontSize": "5.3556rem",
-              },
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-              "fontSize": "3.5rem",
+              "fontSize": "6rem",
               "fontWeight": 300,
               "letterSpacing": "-0.01562em",
               "lineHeight": 1.167,
             },
             "h2": Object {
-              "@media (min-width:1280px)": Object {
-                "fontSize": "3.75rem",
-              },
-              "@media (min-width:600px)": Object {
-                "fontSize": "2.9167rem",
-              },
-              "@media (min-width:960px)": Object {
-                "fontSize": "3.3333rem",
-              },
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-              "fontSize": "2.375rem",
+              "fontSize": "3.75rem",
               "fontWeight": 300,
               "letterSpacing": "-0.00833em",
               "lineHeight": 1.2,
             },
             "h3": Object {
-              "@media (min-width:1280px)": Object {
-                "fontSize": "2.9991rem",
-              },
-              "@media (min-width:600px)": Object {
-                "fontSize": "2.5707rem",
-              },
-              "@media (min-width:960px)": Object {
-                "fontSize": "2.7849rem",
-              },
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-              "fontSize": "2rem",
+              "fontSize": "3rem",
               "fontWeight": 400,
               "letterSpacing": "0em",
               "lineHeight": 1.167,
             },
             "h4": Object {
-              "@media (min-width:1280px)": Object {
-                "fontSize": "2.0243rem",
-              },
-              "@media (min-width:600px)": Object {
-                "fontSize": "1.8219rem",
-              },
-              "@media (min-width:960px)": Object {
-                "fontSize": "2.0243rem",
-              },
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-              "fontSize": "1.5625rem",
+              "fontSize": "2.125rem",
               "fontWeight": 400,
               "letterSpacing": "0.00735em",
               "lineHeight": 1.235,
             },
             "h5": Object {
-              "@media (min-width:1280px)": Object {
-                "fontSize": "1.4993rem",
-              },
-              "@media (min-width:600px)": Object {
-                "fontSize": "1.3118rem",
-              },
-              "@media (min-width:960px)": Object {
-                "fontSize": "1.4993rem",
-              },
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-              "fontSize": "1.25rem",
+              "fontSize": "1.5rem",
               "fontWeight": 400,
               "letterSpacing": "0em",
               "lineHeight": 1.334,
             },
             "h6": Object {
-              "@media (min-width:1280px)": Object {
-                "fontSize": "1.25rem",
-              },
-              "@media (min-width:600px)": Object {
-                "fontSize": "1.25rem",
-              },
-              "@media (min-width:960px)": Object {
-                "fontSize": "1.25rem",
-              },
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
-              "fontSize": "1.125rem",
+              "fontSize": "1.25rem",
               "fontWeight": 500,
               "letterSpacing": "0.0075em",
               "lineHeight": 1.6,
@@ -629,9 +575,12 @@ exports[`App unit tests should match the snapshot 1`] = `
                               </ForwardRef(Typography)>
                             </WithStyles(ForwardRef(Typography))>
                             <WithStyles(ForwardRef(Button))
+                              className="user--login-button"
                               color="inherit"
+                              onClick={[Function]}
                             >
                               <ForwardRef(Button)
+                                className="user--login-button"
                                 classes={
                                   Object {
                                     "colorInherit": "MuiButton-colorInherit",
@@ -666,17 +615,19 @@ exports[`App unit tests should match the snapshot 1`] = `
                                   }
                                 }
                                 color="inherit"
+                                onClick={[Function]}
                               >
                                 <WithStyles(ForwardRef(ButtonBase))
-                                  className="MuiButton-root MuiButton-text MuiButton-colorInherit"
+                                  className="MuiButton-root MuiButton-text user--login-button MuiButton-colorInherit"
                                   component="button"
                                   disabled={false}
                                   focusRipple={true}
                                   focusVisibleClassName="Mui-focusVisible"
+                                  onClick={[Function]}
                                   type="button"
                                 >
                                   <ForwardRef(ButtonBase)
-                                    className="MuiButton-root MuiButton-text MuiButton-colorInherit"
+                                    className="MuiButton-root MuiButton-text user--login-button MuiButton-colorInherit"
                                     classes={
                                       Object {
                                         "disabled": "Mui-disabled",
@@ -688,12 +639,14 @@ exports[`App unit tests should match the snapshot 1`] = `
                                     disabled={false}
                                     focusRipple={true}
                                     focusVisibleClassName="Mui-focusVisible"
+                                    onClick={[Function]}
                                     type="button"
                                   >
                                     <button
-                                      className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-colorInherit"
+                                      className="MuiButtonBase-root MuiButton-root MuiButton-text user--login-button MuiButton-colorInherit"
                                       disabled={false}
                                       onBlur={[Function]}
+                                      onClick={[Function]}
                                       onDragLeave={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
@@ -710,7 +663,7 @@ exports[`App unit tests should match the snapshot 1`] = `
                                       <span
                                         className="MuiButton-label"
                                       >
-                                        Login
+                                        LOGIN
                                       </span>
                                       <NoSsr>
                                         <WithStyles(undefined)
@@ -748,7 +701,7 @@ exports[`App unit tests should match the snapshot 1`] = `
                               </ForwardRef(Button)>
                             </WithStyles(ForwardRef(Button))>
                             <div
-                              className="themeToggle"
+                              className="theme-toggle--button"
                               onClick={[Function]}
                             >
                               <WithStyles(ForwardRef(IconButton))
@@ -876,6 +829,20 @@ exports[`App unit tests should match the snapshot 1`] = `
             </WithStyles(ForwardRef(AppBar))>
           </div>
         </Component>
+        <LoginModal
+          display={false}
+        >
+          <ForwardRef(Modal)
+            onClose={[Function]}
+            open={false}
+            style={
+              Object {
+                "left": "50%",
+                "top": "50%",
+              }
+            }
+          />
+        </LoginModal>
       </div>
     </ThemeProvider>
   </App>
