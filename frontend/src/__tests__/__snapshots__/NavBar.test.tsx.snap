@@ -2,7 +2,7 @@
 
 exports[`NavBar unit tests should match the snapshot 1`] = `
 <div
-  className="makeStyles-root-1"
+  className="makeStyles-root-2"
 >
   <WithStyles(ForwardRef(AppBar))
     position="static"
@@ -10,14 +10,14 @@ exports[`NavBar unit tests should match the snapshot 1`] = `
     <WithStyles(ForwardRef(Toolbar))>
       <WithStyles(ForwardRef(IconButton))
         aria-label="menu"
-        className="makeStyles-menuButton-2"
+        className="makeStyles-menuButton-3"
         color="inherit"
         edge="start"
       >
         <MenuIcon />
       </WithStyles(ForwardRef(IconButton))>
       <WithStyles(ForwardRef(Typography))
-        className="makeStyles-title-3"
+        className="makeStyles-title-4"
         variant="h6"
       >
         DumbAFCbts
@@ -46,11 +46,9 @@ exports[`NavBar unit tests should match the snapshot 1`] = `
         <WithStyles(ForwardRef(IconButton))
           color="inherit"
         >
-          <div
-            className="toggle-light"
-          >
-            <Brightness7Icon />
-          </div>
+          <LightbulbIcon
+            variant="dark"
+          />
         </WithStyles(ForwardRef(IconButton))>
       </div>
     </WithStyles(ForwardRef(Toolbar))>

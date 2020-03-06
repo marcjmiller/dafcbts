@@ -1,52 +1,66 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+export enum AuthStep {
+  INIT_STATE = 'INIT_STATE',
+  LOGGING_IN = 'LOGGING_IN',
+  LOGGED_IN = 'LOGGED_IN',
+  LOGGED_OUT = 'LOGGED OUT',
+  LOGIN_FAILED = 'LOGIN FAILED'
+}
+
+interface UserState {
+  userName: string,
+  token: string,
+}
 
 interface AuthState {
-  isLoading: boolean,
-  user: {
-    userName: string,
-    token: string,
-  },
+  authStep: AuthStep,
+  user: UserState,
   error: Error | null,
+}
+
+const InitUserState: UserState = {
+  userName: '',
+  token: '',
 };
 
-const initialState: AuthState = {
-  isLoading: false,
-  user: {
-    userName: '',
-    token: '',
-  },
+const InitialState: AuthState = {
+  authStep: AuthStep.INIT_STATE,
+  user: InitUserState,
   error: null,
 };
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState,
+  initialState: InitialState,
   reducers: {
     signInStart(state) {
-      state.isLoading = true;
       state.error = null;
+      state.authStep = AuthStep.LOGGING_IN;
     },
 
-    signInSuccess(state, action) {
+    signInSuccess(state, action: PayloadAction<UserState>) {
       const { token, userName } = action.payload;
 
+      state.authStep = AuthStep.LOGGED_IN;
       state.user = { token, userName };
-      state.isLoading = false;
       state.error = null;
     },
 
-    signInFailure(state, action) {
-      state.error = action.payload;
+    signInFailure(state, action: PayloadAction<Error>) {
+      state.authStep = AuthStep.LOGIN_FAILED;
       state.user = {
         userName: '',
         token: '',
       };
-      state.isLoading = false;
+      state.error = action.payload;
     },
 
     signOut(state) {
-      state = initialState;
-    }
+      state.authStep = AuthStep.LOGGED_OUT;
+      state.user = InitUserState;
+      state.error = null;
+    },
   },
 });
 
@@ -54,4 +68,4 @@ export const { signInStart, signInSuccess, signInFailure, signOut } = authSlice.
 
 export default authSlice.reducer;
 
-export const InitAuthState = initialState;
+export const InitAuthState = InitialState;

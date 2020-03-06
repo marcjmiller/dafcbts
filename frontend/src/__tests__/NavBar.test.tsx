@@ -1,14 +1,13 @@
 import React from 'react';
 import { NavBar } from '../components/NavBar';
 import { shallow } from 'enzyme';
-import { AppBar, Button, IconButton } from '@material-ui/core';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
-import MenuIcon from '@material-ui/icons/Menu';
-import { ThemeTypes } from '../types';
-
+import { AppBar, Button } from '@material-ui/core';
+import { ThemeType } from '../resources/types';
+import LightbulbIcon from '../resources/icons/LightbulbIcon';
+import MenuIcon from '../resources/icons/MenuIcon';
 
 describe('NavBar unit tests', () => {
-  const themeType = ThemeTypes.DARK;
+  const themeType = ThemeType.DARK;
   const toggleThemeSpy = jest.fn();
   const wrapper = shallow(<NavBar themeType={themeType} toggleTheme={toggleThemeSpy}/>);
 
@@ -26,7 +25,8 @@ describe('NavBar unit tests', () => {
 
   it('should display a button that toggles the theme on press', () => {
     expect(wrapper.find('.themeToggle').exists()).toBeTruthy();
-    expect(wrapper.find(Brightness7Icon).exists()).toBeTruthy();
+    expect(wrapper.find(LightbulbIcon).exists()).toBeTruthy();
+    expect(wrapper.find(LightbulbIcon).props().variant).toEqual(ThemeType.DARK);
     wrapper.find('.themeToggle').simulate('click');
     expect(toggleThemeSpy).toHaveBeenCalled();
   });

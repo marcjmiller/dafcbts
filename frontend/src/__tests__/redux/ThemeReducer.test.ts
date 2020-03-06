@@ -1,5 +1,5 @@
 import reducer, { InitThemeState, toggleThemeType } from '../../store/reducer/slices/themeSlice';
-import { ThemeTypes } from '../../types';
+import { ThemeType } from '../../resources/types';
 
 describe('ThemeReducer tests', () => {
   it('should return the initial state', () => {
@@ -9,10 +9,10 @@ describe('ThemeReducer tests', () => {
 
   it('should toggle the themeType on a toggleThemeType action', () => {
     const nextState = reducer(InitThemeState, toggleThemeType());
-    expect(nextState.themeType).toEqual(ThemeTypes.LIGHT);
+    expect(nextState.themeType).toEqual(ThemeType.LIGHT);
 
     const newState = reducer(nextState, toggleThemeType());
-    expect(newState.themeType).toEqual(ThemeTypes.DARK);
+    expect(newState.themeType).toEqual(ThemeType.DARK);
   });
 
 });

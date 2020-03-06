@@ -1,8 +1,13 @@
-import { colors } from './colors';
+export const colors = {
+  white: '#FFFFFF',
+  black: '#000000',
+};
 
 export const globalTheme = {
   color: {
     fontColorPrimary: colors.black,
+    lightToggleOn: colors.white,
+    lightToggleOff: colors.black,
   },
 
   font: {
@@ -10,8 +15,3 @@ export const globalTheme = {
     sizePrimary: '16px',
   },
 };
-
-export enum ThemeTypes {
-  DARK = 'dark',
-  LIGHT = 'light',
-}

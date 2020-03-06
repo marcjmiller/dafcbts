@@ -2,9 +2,9 @@ import React from 'react';
 import { createMuiTheme, CssBaseline, responsiveFontSizes, ThemeProvider } from '@material-ui/core';
 import { NavBar } from '../components/NavBar';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../store/reducer';
 import { toggleThemeType } from '../store/reducer/slices/themeSlice';
 import { fetchAllCbts } from '../store/actions';
+import { RootState } from '../resources/types';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();

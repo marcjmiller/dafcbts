@@ -1,5 +1,5 @@
-import { AppThunk } from '../store';
 import { getCbtsFailed, getCbtsSuccess } from '../reducer/slices/cbtSlice';
+import { AppDispatch, AppThunk } from '../../resources/types';
 
 const axios = require('axios').default;
 
@@ -9,7 +9,7 @@ export function getCbts() {
   return data;
 }
 
-export const fetchAllCbts = (): AppThunk => async dispatch => {
+export const fetchAllCbts = (): AppThunk => async (dispatch: AppDispatch) => {
   try {
     const cbts = await getCbts();
     dispatch(getCbtsSuccess(cbts));

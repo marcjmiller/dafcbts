@@ -1,31 +1,16 @@
-import { AppBar, Button, createStyles, IconButton, Theme, Toolbar, Typography } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import Brightness7Icon from '@material-ui/icons/Brightness7';
-import Brightness4Icon from '@material-ui/icons/Brightness4';
-import { makeStyles } from '@material-ui/core/styles';
+import { AppBar, Button, IconButton, Toolbar, Typography } from '@material-ui/core';
 import * as React from 'react';
-import { ThemeTypes } from '../types';
+import LightbulbIcon from '../resources/icons/LightbulbIcon';
+import MenuIcon from '../resources/icons/MenuIcon';
+import { ThemeType } from '../resources/types';
+import { useStyles } from '../resources/theme';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      flexGrow: 1,
-    },
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
-    title: {
-      flexGrow: 1,
-    },
-  }),
-);
-
-interface OwnProps {
-  themeType: string;
+interface MyProps {
+  themeType: ThemeType;
   toggleTheme: () => void;
 }
 
-export const NavBar: React.FC<OwnProps> = (props) => {
+export const NavBar: React.FC<MyProps> = (props) => {
   const classes = useStyles();
 
   return (
@@ -33,19 +18,15 @@ export const NavBar: React.FC<OwnProps> = (props) => {
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon/>
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             DumbAFCbts
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">LOGIN</Button>
           <div className={'themeToggle'} onClick={props.toggleTheme}>
             <IconButton color="inherit">
-              {props.themeType === ThemeTypes.DARK ?
-                <div className={'toggle-light'}><Brightness7Icon/></div>
-                :
-                <div className={'toggle-dark'}><Brightness4Icon/></div>
-              }
+              <LightbulbIcon variant={props.themeType} />
             </IconButton>
           </div>
         </Toolbar>

@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ThemeTypes } from '../../../types';
+import { ThemeType } from '../../../resources/types';
 
 interface ThemeState {
-  themeType: ThemeTypes.DARK | ThemeTypes.LIGHT
+  themeType: ThemeType
 }
 
 const initialState: ThemeState = {
-  themeType: ThemeTypes.DARK,
+  themeType: ThemeType.DARK,
 };
 
 const themeSlice = createSlice({
@@ -14,10 +14,10 @@ const themeSlice = createSlice({
   initialState,
   reducers: {
     toggleThemeType(state) {
-      if (state.themeType === ThemeTypes.DARK) {
-        state.themeType = ThemeTypes.LIGHT
+      if (state.themeType === ThemeType.DARK) {
+        state.themeType = ThemeType.LIGHT;
       } else {
-        state.themeType = ThemeTypes.DARK
+        state.themeType = ThemeType.DARK;
       }
     },
   },

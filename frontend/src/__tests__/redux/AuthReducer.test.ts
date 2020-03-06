@@ -1,6 +1,11 @@
-import reducer, { InitAuthState, signInStart, signInSuccess, signInFailure, signOut } from '../../store/reducer/slices/authSlice';
-import { Simulate } from 'react-dom/test-utils';
-import error = Simulate.error;
+import reducer, {
+  AuthStep,
+  InitAuthState,
+  signInFailure,
+  signInStart,
+  signInSuccess,
+  signOut,
+} from '../../store/reducer/slices/authSlice';
 
 describe('AuthReducer tests', () => {
   it('should return the initial state', () => {
@@ -13,36 +18,37 @@ describe('AuthReducer tests', () => {
     const nextState = reducer(InitAuthState, signInStart());
 
     expect(nextState.user.token !== '').toEqual(false);
-    expect(nextState.isLoading).toBeTruthy();
+    expect(nextState.authStep).toEqual(AuthStep.LOGGING_IN);
     expect(nextState.error).toBeNull();
   });
 
-  it('should set loading/error and user info on successful sign in', () => {
+  it('should set loading/error and user info on successful login', () => {
     const payload = { token: 'A wild token appears', userName: 'BillyBob' };
     const nextState = reducer(InitAuthState, signInSuccess(payload));
 
     expect(nextState.user.token !== '').toBeTruthy();
+    expect(nextState.user.token === 'A wild token appears').toBeTruthy();
     expect(nextState.user.userName).toEqual('BillyBob');
-    expect(nextState.isLoading).toBeFalsy();
+    expect(nextState.authStep).toEqual(AuthStep.LOGGED_IN);
     expect(nextState.error).toBeNull();
   });
 
-  it('should set loading/error and user info on failed sign in', () => {
-    const error = 'Incorrect Password';
+  it('should set loading/error and user info on failed login', () => {
+    const error = Error('Incorrect Password');
     const nextState = reducer(InitAuthState, signInFailure(error));
 
     expect(nextState.user.token !== '').toBeFalsy();
     expect(nextState.user.userName).toEqual('');
-    expect(nextState.isLoading).toBeFalsy();
-    expect(nextState.error).toEqual(error)
+    expect(nextState.authStep).toEqual(AuthStep.LOGIN_FAILED);
+    expect(nextState.error).toEqual(error);
   });
 
-  it('should reset loading/error and user info on sign out', () => {
+  it('should reset loading/error and user info on logout', () => {
     const nextState = reducer(InitAuthState, signOut());
 
     expect(nextState.user.token === '').toBeTruthy();
     expect(nextState.user.userName).toEqual('');
-    expect(nextState.isLoading).toBeFalsy();
     expect(nextState.error).toBeNull();
+    expect(nextState.authStep).toEqual(AuthStep.LOGGED_OUT);
   });
 });

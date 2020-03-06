@@ -248,7 +248,7 @@
                         <version>1.8</version>
                         <executions>
                             <execution>
-                                <phase>package</phase>
+                                <phase>generate-resources</phase>
                                 <configuration>
                                     <target>
                                         <copy todir="${project.build.directory}/classes/public">
