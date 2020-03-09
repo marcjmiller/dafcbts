@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, ThemeType } from '../resources/types';
-import { useStyles } from '../resources/theme';
-import { AuthStep, signOut, signInStart } from '../store/reducer/slices/authSlice';
+import { RootState, ThemeType } from '../../resources/types';
+import { useStyles } from '../../resources/theme';
+import { AuthStep, signOut, signInStart } from '../../store/reducer/slices/authSlice';
 import { AppBar, Button, IconButton, Toolbar, Typography } from '@material-ui/core';
-import MenuIcon from '../resources/icons/MenuIcon';
-import LightbulbIcon from '../resources/icons/LightbulbIcon';
+import MenuIcon from '../../resources/icons/MenuIcon';
+import LightbulbIcon from '../../resources/icons/LightbulbIcon';
 
 interface MyProps {
   themeType: ThemeType;

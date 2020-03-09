@@ -1,12 +1,12 @@
 import React from 'react';
 import { createMuiTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
-import { NavBar } from '../features/NavBar';
+import { NavBar } from '../features/dashboard/NavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleThemeType } from '../store/reducer/slices/themeSlice';
 import { fetchAllCbts } from '../store/actions';
 import { RootState } from '../resources/types';
 import { AuthStep } from '../store/reducer/slices/authSlice';
-import LoginModal from '../features/LoginModal';
+import LoginModal from '../features/login/LoginModal';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();

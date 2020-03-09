@@ -8,25 +8,36 @@ export const useStyles = makeStyles((theme: Theme) =>
       justifyContent: 'center',
       alignItems: 'center',
     },
+
     root: {
       flexGrow: 1,
     },
+
     menuButton: {
       marginRight: theme.spacing(2),
     },
+
     title: {
       flexGrow: 1,
     },
+
     paper: {
+      display: 'flex',
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
       position: 'absolute',
       width: 400,
+      height: 400,
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
       padding: theme.spacing(2, 4, 3),
     },
+
     modalBody: {
-      height: '100%',
+      marginLeft: -200,
+      marginTop: -200,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-around',
