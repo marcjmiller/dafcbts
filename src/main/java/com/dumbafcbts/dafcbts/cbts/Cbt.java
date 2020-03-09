@@ -12,6 +12,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@Table(name = "data_cbt")
 public class Cbt {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

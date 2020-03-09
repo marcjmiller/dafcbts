@@ -22,7 +22,7 @@ describe('CbtReducer tests', () => {
   });
 
   it('should send Error messages to state on error', () => {
-    const data = "This is an error message";
+    const data = new Error("This is an error message");
     const nextState = reducer(InitCbtState, getCbtsFailed(data));
 
     expect(nextState.cbts).toEqual([]);

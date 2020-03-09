@@ -4,8 +4,8 @@ export enum AuthStep {
   INIT_STATE = 'INIT_STATE',
   LOGGING_IN = 'LOGGING_IN',
   LOGGED_IN = 'LOGGED_IN',
-  LOGGED_OUT = 'LOGGED OUT',
-  LOGIN_FAILED = 'LOGIN FAILED'
+  LOGGED_OUT = 'LOGGED_OUT',
+  LOGIN_FAILED = 'LOGIN_FAILED'
 }
 
 interface UserState {

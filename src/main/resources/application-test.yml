@@ -9,6 +9,10 @@ spring:
     platform: h2
     username: dafcbts
     password:
+      data: classpath:data-h2.sql
+  jpa:
+    hibernate:
+      ddl-auto: none
 logging:
   level:
     ROOT: ERROR

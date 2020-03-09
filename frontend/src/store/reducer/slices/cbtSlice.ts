@@ -3,7 +3,7 @@ import { CbtModel } from '../../../models/CbtModel';
 
 interface CbtState {
   cbts: CbtModel[],
-  error: string | null,
+  error: Error | null,
   loading: boolean,
 }
 
@@ -18,11 +18,11 @@ const cbtSlice = createSlice({
     initialState,
     reducers: {
       getCbtsSuccess(state, action: PayloadAction<CbtModel[]>) {
-        state.cbts = action.payload;
+        state.cbts = Array.from(action.payload);
         state.loading = false;
       },
 
-      getCbtsFailed(state, action: PayloadAction<string>) {
+      getCbtsFailed(state, action: PayloadAction<Error>) {
         state.error = action.payload;
         state.loading = false;
       },

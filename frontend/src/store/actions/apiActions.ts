@@ -1,12 +1,16 @@
 import { getCbtsFailed, getCbtsSuccess } from '../reducer/slices/cbtSlice';
 import { AppDispatch, AppThunk } from '../../resources/types';
+import { CbtModel } from '../../models/CbtModel';
+import { AxiosResponse } from 'axios';
 
 const axios = require('axios').default;
 
-export function getCbts() {
+export function getCbts(): CbtModel[] {
   const url = 'api/cbts';
-  const { data } = axios.get(url);
-  return data;
+  return axios.get(url)
+    .then((response: AxiosResponse) => {
+      return response.data
+    });
 }
 
 export const fetchAllCbts = (): AppThunk => async (dispatch: AppDispatch) => {
