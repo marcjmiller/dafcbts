@@ -35,9 +35,9 @@ describe('App unit tests', () => {
   });
 
   // TODO: fix snapshot testing
-  // it('should match the snapshot', () => {
-  //   expect(wrapper).toMatchSnapshot();
-  // });
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });
 
 

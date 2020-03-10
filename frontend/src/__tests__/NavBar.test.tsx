@@ -10,7 +10,7 @@ import MenuIcon from '../resources/icons/MenuIcon';
 
 describe('NavBar unit tests', () => {
   const themeType = ThemeType.DARK;
-  const toggleThemeSpy = jest.fn();
+  const toggleThemeSpy: jest.Mock = jest.fn();
   const wrapper = mount(
     <Provider store={store}>
       <NavBar themeType={themeType} toggleTheme={toggleThemeSpy}/>

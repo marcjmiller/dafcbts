@@ -40,6 +40,7 @@ build/
 
 ### Testing ###
 /coverage
+/acceptance/output
 
 ### Production ###
 /build
