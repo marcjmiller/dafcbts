@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 class CbtControllerTest extends BaseIntegrationTest {
   @Autowired
   private CbtRepository cbtRepository;

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useStyles } from '../../resources/theme';
+import { useStyles } from '../../../resources/theme';
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState } from '../../resources/types';
-import { fetchAllCbts } from '../../store/actions';
+import { RootState } from '../../../resources/types';
+import { fetchAllCbts } from '../../../store/actions';
 import { Button } from '@material-ui/core';
+import CbtCard from '../../cbts/CbtCard';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -21,7 +22,11 @@ const Dashboard = () => {
   return (
     <div className={classes.dashboardContainer}>
       <div className={classes.dashboard}>
-        Cbts fetched: {cbts.length}
+        {cbts.length > 0 ? 
+        cbts.map(cbt => <CbtCard cbt={cbt}/>)
+          :
+          "No CBTs found"
+          }
         <Button onClick={() => setRefresh(!refresh)} color={'primary'} className={'refetch'}>Re-Fetch</Button>
       </div>
     </div>

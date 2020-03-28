@@ -5,7 +5,7 @@ import { NavBar } from '../features/dashboard/NavBar';
 import { Provider } from 'react-redux';
 import { store } from '../store';
 import LoginModal from '../features/login/LoginModal';
-import Dashboard from '../features/dashboard/Dashboard';
+import Dashboard from '../features/dashboard/cbtDashboard/CbtDashboard';
 import Footer from '../features/dashboard/Footer';
 
 describe('App unit tests', () => {

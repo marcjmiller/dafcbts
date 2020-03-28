@@ -25,8 +25,10 @@ export const useStyles = makeStyles((theme: Theme) =>
       height: '100vh',
       display: 'flex',
       flexDirection: 'row',
+      flexWrap: 'wrap',
       justifyContent: 'flex-start',
       alignItems: 'flex-start',
+      padding: '8px',
     },
 
     footer: {

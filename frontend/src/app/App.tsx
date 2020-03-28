@@ -6,7 +6,7 @@ import { toggleThemeType } from '../store/reducer/slices/themeSlice';
 import { RootState } from '../resources/types';
 import { AuthStep } from '../store/reducer/slices/authSlice';
 import LoginModal from '../features/login/LoginModal';
-import Dashboard from '../features/dashboard/Dashboard';
+import Dashboard from '../features/dashboard/cbtDashboard/CbtDashboard';
 import Footer from '../features/dashboard/Footer';
 import { useStyles } from '../resources/theme';
 
