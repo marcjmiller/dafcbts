@@ -4,14 +4,13 @@ import { mount } from 'enzyme';
 import { Typography } from '@material-ui/core';
 import { ThemeType } from '../resources/types';
 import LightbulbIcon from '../resources/icons/LightbulbIcon';
-import LoginModal from '../features/login/LoginModal';
 import { store } from '../store';
 import { Provider } from 'react-redux';
 import MenuIcon from '../resources/icons/MenuIcon';
 
 describe('NavBar unit tests', () => {
   const themeType = ThemeType.DARK;
-  const toggleThemeSpy = jest.fn();
+  const toggleThemeSpy: jest.Mock = jest.fn();
   const wrapper = mount(
     <Provider store={store}>
       <NavBar themeType={themeType} toggleTheme={toggleThemeSpy}/>
@@ -33,6 +32,7 @@ describe('NavBar unit tests', () => {
     expect(toggleThemeSpy).toHaveBeenCalled();
   });
 
+  // TODO: fix snapshot testing
   // it('should match the snapshot', () => {
   //   expect(wrapper).toMatchSnapshot();
   // });

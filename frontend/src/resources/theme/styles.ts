@@ -3,6 +3,42 @@ import { createStyles, Theme } from '@material-ui/core';
 
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    app: {
+      height: '100vh',
+      width: '100vw',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+    },
+
+    dashboardContainer: {
+      height: 'calc(100vh - 128px)',
+      width: '100vw',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'flex-start',
+      alignItems: 'center',
+    },
+
+    dashboard: {
+      width: '100vw',
+      height: '100vh',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+    },
+
+    footer: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '64px',
+      width: '100vw',
+      padding: '0px 24px 24px 0px',
+    },
+
     icon: {
       display: 'flex',
       justifyContent: 'center',

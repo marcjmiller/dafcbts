@@ -5,6 +5,8 @@ import { NavBar } from '../features/dashboard/NavBar';
 import { Provider } from 'react-redux';
 import { store } from '../store';
 import LoginModal from '../features/login/LoginModal';
+import Dashboard from '../features/dashboard/Dashboard';
+import Footer from '../features/dashboard/Footer';
 
 describe('App unit tests', () => {
   const wrapper = mount(
@@ -24,9 +26,18 @@ describe('App unit tests', () => {
     expect(wrapper.find(LoginModal).exists()).toBeTruthy();
   });
 
-  // it('should match the snapshot', () => {
-  //   expect(wrapper).toMatchSnapshot();
-  // });
+  it('should render the dashboard', () => {
+    expect(wrapper.find(Dashboard).exists()).toBeTruthy();
+  });
+
+  it('should render the footer', () => {
+    expect(wrapper.find(Footer).exists()).toBeTruthy();
+  });
+
+  // TODO: fix snapshot testing
+  it('should match the snapshot', () => {
+    expect(wrapper).toMatchSnapshot();
+  });
 });
 
 

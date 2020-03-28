@@ -9,9 +9,12 @@ spring:
     platform: h2
     username: dafcbts
     password:
-logging:
-  level:
-    ROOT: ERROR
-    org.springframework: OFF
-    org.hibernate: OFF
-    org.hibernate.SQL: OFF
+  output:
+    ansi:
+      enabled: always
+#logging:
+#  level:
+#    ROOT: ERROR
+#    org.springframework: OFF
+#    org.hibernate: OFF
+#    org.hibernate.SQL: OFF

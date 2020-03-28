@@ -3,17 +3,15 @@ import { createMuiTheme, CssBaseline, ThemeProvider } from '@material-ui/core';
 import { NavBar } from '../features/dashboard/NavBar';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleThemeType } from '../store/reducer/slices/themeSlice';
-import { fetchAllCbts } from '../store/actions';
 import { RootState } from '../resources/types';
 import { AuthStep } from '../store/reducer/slices/authSlice';
 import LoginModal from '../features/login/LoginModal';
+import Dashboard from '../features/dashboard/Dashboard';
+import Footer from '../features/dashboard/Footer';
+import { useStyles } from '../resources/theme';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
-
-  setTimeout(() => {
-    dispatch(fetchAllCbts());
-  }, 500);
 
   const { themeType } = useSelector(
     (state: RootState) => state.theme,
@@ -29,21 +27,20 @@ const App: React.FC = () => {
     },
   });
 
-  const { cbts, error, loading } = useSelector(
-    (state: RootState) => state.cbts,
-  );
-
   const toggleTheme = () => {
     dispatch(toggleThemeType());
   };
 
+  const classes = useStyles();
   const isLoggingIn = authStep === AuthStep.LOGGING_IN;
 
   return (
     <ThemeProvider theme={muiTheme}>
       <CssBaseline/>
-      <div className="App">
+      <div className={classes.app}>
         <NavBar themeType={themeType} toggleTheme={toggleTheme}/>
+        <Dashboard/>
+        <Footer/>
         <LoginModal display={isLoggingIn}/>
       </div>
     </ThemeProvider>
