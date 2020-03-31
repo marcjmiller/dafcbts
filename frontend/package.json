@@ -29,6 +29,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest test",
+    "test-once": "jest test",
     "eject": "react-scripts eject"
   },
   "proxy": "http://localhost:8080/",

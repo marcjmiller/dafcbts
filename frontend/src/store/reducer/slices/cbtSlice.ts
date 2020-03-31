@@ -18,7 +18,7 @@ const cbtSlice = createSlice({
     initialState,
     reducers: {
       getCbtsSuccess(state, action: PayloadAction<CbtModel[]>) {
-        state.cbts = Array.from(action.payload);
+        state.cbts = action.payload;
         state.loading = false;
       },
 

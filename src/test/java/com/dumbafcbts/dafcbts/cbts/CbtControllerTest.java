@@ -24,6 +24,8 @@ class CbtControllerTest extends BaseIntegrationTest {
   
   @Test
   void postCbtReturnsStatusCodeAndAddsCbtToRepo() {
+    int sizeRepoPrior = cbtRepository.findAll().size();
+
     String cbtJsonString = "{" +
                                "\"name\":\"CBTs for dummies\"," +
                                "\"description\":\"How to solve CBTs for dummies\"," +
@@ -40,10 +42,12 @@ class CbtControllerTest extends BaseIntegrationTest {
         .then()
         .statusCode(200);
   
-    assertEquals(1, cbtRepository.findAll().size());
-    assertEquals("CBTs for dummies", cbtRepository.findAll().get(0).getName());
-    assertEquals("How to solve CBTs for dummies", cbtRepository.findAll().get(0).getDescription());
-    assertEquals("http://www.google.com", cbtRepository.findAll().get(0).getWebAddress());
-    assertEquals("TheInternet", cbtRepository.findAll().get(0).getCbtSource());
+    int sizeRepoAfter = cbtRepository.findAll().size();
+
+    assertEquals(1, sizeRepoAfter - sizeRepoPrior);
+    assertEquals("CBTs for dummies", cbtRepository.findAll().get(sizeRepoAfter-1).getName());
+    assertEquals("How to solve CBTs for dummies", cbtRepository.findAll().get(sizeRepoAfter-1).getDescription());
+    assertEquals("http://www.google.com", cbtRepository.findAll().get(sizeRepoAfter-1).getWebAddress());
+    assertEquals("TheInternet", cbtRepository.findAll().get(sizeRepoAfter-1).getCbtSource());
   }
 }

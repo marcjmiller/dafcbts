@@ -32,6 +32,7 @@ build/
 
 ### VS Code ###
 .vscode/
+.code-workspace
 
 ### Dependencies ###
 **/node_modules
