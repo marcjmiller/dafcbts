@@ -28,11 +28,15 @@ const useStyles = makeStyles({
   },
   card: {
     transition: 'opacity 0.5s',
-    opacity: 1
+    opacity: 1,
+    minWidth: '350px',
+    maxWidth: '350px'
   },
   cardHidden: {
     opacity: 0,
-    pointerEvents: 'none'
+    pointerEvents: 'none',
+    minWidth: '350px',
+    maxWidth: '350px'
   },
   cardButtonContainer: {
     width: '100%',
@@ -64,7 +68,7 @@ const CbtCard: React.FC<MyProps> = ({ cbt }) => {
   }, []);
 
   return (
-    <Card className={`cbt-card--container ${root} ${open ? card : cardHidden}`}>
+    <Card className={`cbt-card--container ${root} ${open ? card : cardHidden}`} raised>
       <CardHeader
         avatar={
           <Avatar className={`${avatar}`}>
@@ -72,6 +76,9 @@ const CbtCard: React.FC<MyProps> = ({ cbt }) => {
           </Avatar>
         }
         title={cbt.name}
+        titleTypographyProps={{
+          variant: 'h5',
+        }}
       />
       <CardContent className={`${content}`}>
         <Typography variant="body2" color="textSecondary" component="p">
@@ -83,13 +90,14 @@ const CbtCard: React.FC<MyProps> = ({ cbt }) => {
           <Button
             size="small"
             color="primary"
+            variant="contained"
             onClick={() => {
               window.open('http://' + cbt.webAddress, '_blank');
             }}
           >
-            {cbt.cbtSource}
+            Take this CBT
           </Button>
-          <Button size="small" color="primary">
+          <Button size="small" color="primary" variant="contained">
             View Answers
           </Button>
         </div>

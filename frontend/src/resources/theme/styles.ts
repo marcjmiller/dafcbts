@@ -20,6 +20,14 @@ export const useStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
     },
 
+    cardContainer: {
+      width: '100vw',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      alignItems: 'flex-start',
+    },
+
     dashboard: {
       width: '100vw',
       height: '100vh',

@@ -15,7 +15,7 @@ describe("CBT Card Tests", () => {
 
     expect(testSubject.find(CardHeader).prop('title')).toEqual('Test Cbt')
     expect(testSubject.text()).toContain('test')
-    expect(testSubject.find(Button).at(0).text()).toContain('internet')
+    expect(testSubject.find(Button).at(0).text()).toContain('Take this CBT')
     expect(testSubject.find(Button).at(1).text()).toContain('View Answers')
   });
 });

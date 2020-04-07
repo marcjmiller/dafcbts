@@ -22,13 +22,15 @@ const Dashboard = () => {
   return (
     <div className={classes.dashboardContainer}>
       <div className={classes.dashboard}>
-        {cbts.length > 0 ? 
-        cbts.map(cbt => <CbtCard cbt={cbt}/>)
+        <div className={classes.cardContainer}>
+          {cbts.length > 0 ? 
+          cbts.map(cbt => <CbtCard cbt={cbt}/>)
           :
           "No CBTs found"
           }
-        <Button onClick={() => setRefresh(!refresh)} color={'primary'} className={'refetch'}>Re-Fetch</Button>
-      </div>
+          </div>
+        <Button onClick={() => setRefresh(!refresh)} variant={'contained'} color={'primary'} className={'refetch'}>Re-Fetch</Button>
+        </div>
     </div>
   );
 };
