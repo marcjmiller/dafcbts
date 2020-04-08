@@ -41,7 +41,7 @@ build/
 
 ### Testing ###
 /coverage
-/acceptance/output
+/acceptance/__output__
 
 ### Production ###
 /build

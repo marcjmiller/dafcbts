@@ -2,7 +2,6 @@ import * as React from 'react';
 import { CbtModel } from '../../models/CbtModel';
 import {
   Card,
-  makeStyles,
   CardContent,
   Typography,
   CardActions,
@@ -10,41 +9,7 @@ import {
   Avatar,
   CardHeader
 } from '@material-ui/core';
-
-const useStyles = makeStyles({
-  root: {
-    minWidth: 275,
-    maxWidth: 345,
-    margin: 16
-  },
-  content: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'flex-start'
-  },
-  avatar: {
-    backgroundColor: '#f44336'
-  },
-  card: {
-    transition: 'opacity 0.5s',
-    opacity: 1,
-    minWidth: '350px',
-    maxWidth: '350px'
-  },
-  cardHidden: {
-    opacity: 0,
-    pointerEvents: 'none',
-    minWidth: '350px',
-    maxWidth: '350px'
-  },
-  cardButtonContainer: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  }
-});
+import { cbtStyles } from '../../resources/theme';
 
 interface MyProps {
   cbt: CbtModel;
@@ -52,13 +17,14 @@ interface MyProps {
 
 const CbtCard: React.FC<MyProps> = ({ cbt }) => {
   const {
-    root,
-    content,
-    avatar,
+    cardContent,
+    cardAvatar,
     card,
+    cardVisible,
     cardHidden,
     cardButtonContainer
-  } = useStyles();
+  } = cbtStyles();
+
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -68,10 +34,10 @@ const CbtCard: React.FC<MyProps> = ({ cbt }) => {
   }, []);
 
   return (
-    <Card className={`cbt-card--container ${root} ${open ? card : cardHidden}`} raised>
+    <Card className={`cbt-card--container ${card} ${open ? cardVisible : cardHidden}`} raised>
       <CardHeader
         avatar={
-          <Avatar className={`${avatar}`}>
+          <Avatar className={`${cardAvatar}`}>
             {cbt.name.slice(0, 1).toUpperCase()}
           </Avatar>
         }
@@ -80,13 +46,13 @@ const CbtCard: React.FC<MyProps> = ({ cbt }) => {
           variant: 'h5',
         }}
       />
-      <CardContent className={`${content}`}>
+      <CardContent className={`cbt-card--content ${cardContent}`}>
         <Typography variant="body2" color="textSecondary" component="p">
           {cbt.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <div className={cardButtonContainer}>
+        <div className={`cbt-card--button-container ${cardButtonContainer}`}>
           <Button
             size="small"
             color="primary"

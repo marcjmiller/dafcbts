@@ -8,7 +8,7 @@ import { AuthStep } from '../store/reducer/slices/authSlice';
 import LoginModal from '../features/login/LoginModal';
 import Dashboard from '../features/dashboard/cbtDashboard/CbtDashboard';
 import Footer from '../features/dashboard/Footer';
-import { useStyles } from '../resources/theme';
+import { baseStyles } from '../resources/theme';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const App: React.FC = () => {
     dispatch(toggleThemeType());
   };
 
-  const classes = useStyles();
+  const classes = baseStyles();
   const isLoggingIn = authStep === AuthStep.LOGGING_IN;
 
   return (

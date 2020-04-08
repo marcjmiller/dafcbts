@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useStyles } from '../../../resources/theme';
+import { baseStyles } from '../../../resources/theme';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../../resources/types';
 import { fetchAllCbts } from '../../../store/actions';
@@ -8,7 +8,7 @@ import CbtCard from '../../cbts/CbtCard';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
-  const classes = useStyles();
+  const classes = baseStyles();
   const [refresh, setRefresh] = useState(true);
 
   useEffect(() => {

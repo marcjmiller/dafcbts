@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStyles } from '../../resources/theme';
+import { baseStyles } from '../../resources/theme';
 import { useDispatch } from 'react-redux';
 import { Button, Modal, TextField, Typography } from '@material-ui/core';
 import { resetSignIn, signInSuccess } from '../../store/reducer/slices/authSlice';
@@ -10,7 +10,7 @@ interface MyProps {
 }
 
 const LoginModal: React.FC<MyProps> = (props) => {
-  const classes = useStyles();
+  const classes = baseStyles();
   const dispatch = useDispatch();
 
   return (

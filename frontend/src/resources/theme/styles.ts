@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import { createStyles, Theme } from '@material-ui/core';
 
-export const useStyles = makeStyles((theme: Theme) =>
+export const baseStyles = makeStyles((theme: Theme) =>
   createStyles({
     app: {
       height: '100vh',
@@ -26,6 +26,7 @@ export const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'row',
       justifyContent: 'flex-start',
       alignItems: 'flex-start',
+      flexWrap: 'wrap',
     },
 
     dashboard: {
@@ -97,3 +98,34 @@ export const useStyles = makeStyles((theme: Theme) =>
 
   }),
 );
+
+export const cbtStyles = makeStyles({
+  cardContent: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-start'
+  },
+  cardAvatar: {
+    backgroundColor: '#f44336'
+  },
+  card: {
+    minWidth: '350px',
+    maxWidth: '350px',
+    margin: 16
+  },
+  cardVisible: {
+    transition: 'opacity 0.5s',
+    opacity: 1,
+  },
+  cardHidden: {
+    opacity: 0,
+    pointerEvents: 'none',
+  },
+  cardButtonContainer: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between'
+  }
+});

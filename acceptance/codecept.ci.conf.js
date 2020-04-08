@@ -9,10 +9,9 @@ exports.config = {
   output: './__output__',
   helpers: {
     Puppeteer: {
-      url: 'http://localhost:8585',
+      url: 'http://localhost:8080',
       waitForNavigation: 'networkidle0',
       show: false,
-      windowSize: '1920x1080px',
     },
   },
   include: {
@@ -21,12 +20,22 @@ exports.config = {
   bootstrap: null,
   mocha: {},
   name: 'acceptance',
+  chrome: {
+    defaultViewport: {
+      width: 1920,
+      height: 1080,
+    },
+    args: [
+      "--no-sandbox",
+      "--headless"
+    ],
+  },
   plugins: {
     retryFailedStep: {
-      enabled: true,
+      enabled: false,
     },
     screenshotOnFail: {
-      enabled: true,
+      enabled: false,
     },
   },
 };

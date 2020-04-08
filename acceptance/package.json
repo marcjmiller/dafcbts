@@ -6,6 +6,8 @@
   },
   "scripts": {
     "acc_steps": "yarn codeceptjs run --steps",
-    "acc": "yarn codeceptjs run"
+    "acc": "yarn codeceptjs run -c codecept.conf.js",
+    "acc-w": "yarn codeceptjs run -c codecept.win.conf.js",
+    "acc-ci": "yarn codeceptjs run -c codecept.ci.conf.js"
   }
 }

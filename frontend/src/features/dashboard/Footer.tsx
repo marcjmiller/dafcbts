@@ -1,9 +1,9 @@
 import React from 'react';
-import { useStyles } from '../../resources/theme';
+import { baseStyles } from '../../resources/theme';
 import { Link, Typography } from '@material-ui/core';
 
 const Footer = () => {
-  const classes = useStyles();
+  const classes = baseStyles();
 
   return (
     <div className={classes.footer}>
