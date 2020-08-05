@@ -116,7 +116,11 @@ export const cbtStyles = makeStyles({
   card: {
     minWidth: '350px',
     maxWidth: '350px',
-    margin: 16
+    margin: 16,
+    padding: 8
+  },
+  cardHeader: {
+    padding: '8px !important',
   },
   cardVisible: {
     transition: 'opacity 0.5s',
