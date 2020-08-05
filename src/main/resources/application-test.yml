@@ -1,0 +1,20 @@
+spring:
+  main:
+    banner-mode: off
+  profiles:
+    active: @spring.profiles.active@
+  datasource:
+    url: jdbc:h2:mem:dafcbts;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    platform: h2
+    username: dafcbts
+    password:
+  output:
+    ansi:
+      enabled: always
+logging:
+ level:
+   ROOT: ERROR
+   org.springframework: OFF
+   org.hibernate: OFF
+   org.hibernate.SQL: OFF

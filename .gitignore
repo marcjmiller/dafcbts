@@ -32,6 +32,7 @@ build/
 
 ### VS Code ###
 .vscode/
+.code-workspace
 
 ### Dependencies ###
 **/node_modules
@@ -40,6 +41,7 @@ build/
 
 ### Testing ###
 /coverage
+/acceptance/__output__
 
 ### Production ###
 /build
