@@ -5,7 +5,7 @@ export const store = configureStore({
   reducer: rootReducer,
   middleware: getDefaultMiddleware({
     serializableCheck: {
-      ignoredActions: ['cbt/getCbtsSuccess']
+      ignoredPaths: ['cbts.cbts']
     }
   })
 });

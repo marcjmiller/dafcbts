@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import { configureStore, g } from '@reduxjs/toolkit';
 import { rootReducer } from './reducer';
 
 export const store = configureStore({
