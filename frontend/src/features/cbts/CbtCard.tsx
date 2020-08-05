@@ -1,14 +1,6 @@
 import * as React from 'react';
 import { CbtModel } from '../../models/CbtModel';
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-  Avatar,
-  CardHeader
-} from '@material-ui/core';
+import { Card, CardContent, Typography, CardActions, Button, Avatar, CardHeader } from '@material-ui/core';
 import { cbtStyles } from '../../resources/theme';
 
 interface MyProps {
@@ -16,14 +8,7 @@ interface MyProps {
 }
 
 const CbtCard: React.FC<MyProps> = ({ cbt }) => {
-  const {
-    cardContent,
-    cardAvatar,
-    card,
-    cardVisible,
-    cardHidden,
-    cardButtonContainer
-  } = cbtStyles();
+  const { cardContent, cardHeader, cardAvatar, card, cardVisible, cardHidden, cardButtonContainer } = cbtStyles();
 
   const [open, setOpen] = React.useState(false);
 
@@ -37,34 +22,31 @@ const CbtCard: React.FC<MyProps> = ({ cbt }) => {
   return (
     <Card className={`cbt-card--container ${card} ${open ? cardVisible : cardHidden}`} raised>
       <CardHeader
-        avatar={
-          <Avatar className={`${cardAvatar}`}>
-            {cbt.name.slice(0, 1).toUpperCase()}
-          </Avatar>
-        }
+        className={cardHeader}
+        avatar={<Avatar className={cardAvatar}>{cbt.name.slice(0, 1).toUpperCase()}</Avatar>}
         title={cbt.name}
         titleTypographyProps={{
           variant: 'h5',
         }}
       />
       <CardContent className={`cbt-card--content ${cardContent}`}>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant='body2' color='textSecondary' component='p'>
           {cbt.description}
         </Typography>
       </CardContent>
       <CardActions>
         <div className={`cbt-card--button-container ${cardButtonContainer}`}>
           <Button
-            size="small"
-            color="primary"
-            variant="contained"
+            size='small'
+            color='primary'
+            variant='contained'
             onClick={() => {
               window.open('http://' + cbt.webAddress, '_blank');
             }}
           >
             Take this CBT
           </Button>
-          <Button size="small" color="primary" variant="contained">
+          <Button size='small' color='primary' variant='contained'>
             View Answers
           </Button>
         </div>
