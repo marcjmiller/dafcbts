@@ -78,7 +78,7 @@ export const baseStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       justifyContent: 'center',
       position: 'absolute',
-      width: 300,
+      width: 275,
       height: 300,
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
@@ -87,7 +87,7 @@ export const baseStyles = makeStyles((theme: Theme) =>
     },
 
     modalBody: {
-      marginLeft: -150,
+      marginLeft: -137,
       marginTop: -150,
       display: 'flex',
       flexDirection: 'column',

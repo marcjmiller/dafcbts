@@ -6,7 +6,7 @@ export const baseStyles = makeStyles((theme: Theme) =>
     app: {
       height: '100vh',
       width: '100vw',
-      minWidth: '375px',
+      minWidth: '400px',
       minHeight: '250px',
       display: 'flex',
       flexDirection: 'column',
@@ -25,13 +25,13 @@ export const baseStyles = makeStyles((theme: Theme) =>
     
     cardContainer: {
       width: '100vw',
-      maxHeight: 'calc(100vh - 136px)',
+      maxHeight: 'calc(100vh - 128px)',
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'flex-start',
       flexWrap: 'wrap',
-      overflow: 'scroll',
+      overflow
     },
 
     dashboard: {
@@ -51,7 +51,7 @@ export const baseStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       height: '64px',
       width: '100vw',
-      padding: '8px 24px 24px 8px',
+      padding: '0 24px 24px 0',
     },
 
     icon: {
@@ -78,8 +78,8 @@ export const baseStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       justifyContent: 'center',
       position: 'absolute',
-      width: 300,
-      height: 300,
+      width: 400,
+      height: 400,
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
@@ -87,8 +87,8 @@ export const baseStyles = makeStyles((theme: Theme) =>
     },
 
     modalBody: {
-      marginLeft: -150,
-      marginTop: -150,
+      marginLeft: -200,
+      marginTop: -200,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-around',

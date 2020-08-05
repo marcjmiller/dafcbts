@@ -31,7 +31,7 @@ const CbtCard: React.FC<MyProps> = ({ cbt }) => {
     setTimeout(() => {
       setOpen(!open);
     }, 500);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // 
   }, []);
 
   return (

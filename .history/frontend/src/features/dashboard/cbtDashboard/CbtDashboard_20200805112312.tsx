@@ -14,7 +14,7 @@ const Dashboard = () => {
     dispatch(fetchAllCbts());
   }, [dispatch]);
 
-  const { cbts, loading } = useSelector((state: RootState) => state.cbts);
+  const { cbts } = useSelector((state: RootState) => state.cbts);
 
   return (
     <div className={classes.dashboardContainer}>
@@ -22,7 +22,7 @@ const Dashboard = () => {
         <div className={classes.cardContainer}>
           {cbts.length > 0
             ? cbts.map((cbt, index) => <CbtCard cbt={cbt} key={index} />)
-            : loading ? "Loading CBTs..." : "No CBTs found"}
+            : "Loading CBTs..."}
         </div>
         {/* <div>
           <Button

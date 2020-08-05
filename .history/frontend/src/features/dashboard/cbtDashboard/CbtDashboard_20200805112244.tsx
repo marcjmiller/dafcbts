@@ -3,6 +3,7 @@ import { baseStyles } from "../../../resources/theme";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../../resources/types";
 import { fetchAllCbts } from "../../../store/actions";
+import { Button } from "@material-ui/core";
 import CbtCard from "../../cbts/CbtCard";
 
 const Dashboard = () => {
@@ -14,15 +15,15 @@ const Dashboard = () => {
     dispatch(fetchAllCbts());
   }, [dispatch]);
 
-  const { cbts, loading } = useSelector((state: RootState) => state.cbts);
+  const { cbts } = useSelector((state: RootState) => state.cbts);
 
   return (
     <div className={classes.dashboardContainer}>
       <div className={classes.dashboard}>
         <div className={classes.cardContainer}>
           {cbts.length > 0
-            ? cbts.map((cbt, index) => <CbtCard cbt={cbt} key={index} />)
-            : loading ? "Loading CBTs..." : "No CBTs found"}
+            ? cbts.map((cbt) => <CbtCard cbt={cbt} />)
+            : "Loading CBTs..."}
         </div>
         {/* <div>
           <Button

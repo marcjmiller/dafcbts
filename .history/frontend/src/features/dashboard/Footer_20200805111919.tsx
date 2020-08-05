@@ -17,7 +17,8 @@ const Footer = () => {
           {" "}
           here
         </Link>
-        . Visit
+        .<br />
+        Visit
         <Link
           href={"https://www.reddit.com/r/dumbafcbts"}
           target={"_blank"}

@@ -20,7 +20,7 @@ const Dashboard = () => {
     <div className={classes.dashboardContainer}>
       <div className={classes.dashboard}>
         <div className={classes.cardContainer}>
-          {cbts.length > 0
+          {cbts.length >
             ? cbts.map((cbt, index) => <CbtCard cbt={cbt} key={index} />)
             : loading ? "Loading CBTs..." : "No CBTs found"}
         </div>

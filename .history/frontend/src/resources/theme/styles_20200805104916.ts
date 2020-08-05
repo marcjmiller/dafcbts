@@ -6,36 +6,32 @@ export const baseStyles = makeStyles((theme: Theme) =>
     app: {
       height: '100vh',
       width: '100vw',
-      minWidth: '375px',
-      minHeight: '250px',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-between',
     },
-    
+
     dashboardContainer: {
+      height: 'calc(100vh - 128px)',
       width: '100vw',
-      height: '100vh',
-      maxHeight: 'calc(100vh - 128px)',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-start',
       alignItems: 'center',
     },
-    
+
     cardContainer: {
       width: '100vw',
-      maxHeight: 'calc(100vh - 136px)',
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-around',
       alignItems: 'flex-start',
       flexWrap: 'wrap',
-      overflow: 'scroll',
     },
 
     dashboard: {
       width: '100vw',
+      height: '100vh',
       display: 'flex',
       flexDirection: 'row',
       flexWrap: 'wrap',
@@ -51,7 +47,9 @@ export const baseStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       height: '64px',
       width: '100vw',
-      padding: '8px 24px 24px 8px',
+      zIndex: 2,
+      padding: '0px 24px 24px 0px',
+      backgroundColor: theme.palette.background.paper
     },
 
     icon: {
@@ -61,7 +59,7 @@ export const baseStyles = makeStyles((theme: Theme) =>
     },
 
     root: {
-      flexGrow: 0,
+      flexGrow: 1,
     },
 
     menuButton: {
@@ -78,8 +76,8 @@ export const baseStyles = makeStyles((theme: Theme) =>
       alignItems: 'center',
       justifyContent: 'center',
       position: 'absolute',
-      width: 300,
-      height: 300,
+      width: 400,
+      height: 400,
       backgroundColor: theme.palette.background.paper,
       border: '2px solid #000',
       boxShadow: theme.shadows[5],
@@ -87,8 +85,8 @@ export const baseStyles = makeStyles((theme: Theme) =>
     },
 
     modalBody: {
-      marginLeft: -150,
-      marginTop: -150,
+      marginLeft: -200,
+      marginTop: -200,
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'space-around',

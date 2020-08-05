@@ -87,7 +87,7 @@ export const baseStyles = makeStyles((theme: Theme) =>
     },
 
     modalBody: {
-      marginLeft: -150,
+      marginLeft: -137,
       marginTop: -150,
       display: 'flex',
       flexDirection: 'column',
