@@ -1,5 +1,6 @@
 package com.dumbafcbts.dafcbts.cbts;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "data_cbt")
 public class Cbt {
   @Id
@@ -28,13 +30,5 @@ public class Cbt {
     this.description = cbtJson.getDescription();
     this.webAddress = cbtJson.getWebAddress();
     this.cbtSource = cbtJson.getCbtSource();
-  }
-  
-  public Cbt(long id, String name, String description, String webAddress, String cbtSource) {
-    this.id = id;
-    this.name = name;
-    this.description = description;
-    this.webAddress = webAddress;
-    this.cbtSource = cbtSource;
   }
 }

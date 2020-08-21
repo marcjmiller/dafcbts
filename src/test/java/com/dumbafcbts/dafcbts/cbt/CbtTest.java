@@ -1,9 +1,11 @@
-package com.dumbafcbts.dafcbts.cbts;
+package com.dumbafcbts.dafcbts.cbt;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import com.dumbafcbts.dafcbts.cbts.Cbt;
 
 public class CbtTest {
   private Cbt cbt;

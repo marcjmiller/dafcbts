@@ -1,4 +1,4 @@
-package com.dumbafcbts.dafcbts.cbts;
+package com.dumbafcbts.dafcbts.cbt;
 
 
 import org.junit.jupiter.api.BeforeEach;
@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+
+import com.dumbafcbts.dafcbts.cbts.Cbt;
+import com.dumbafcbts.dafcbts.cbts.CbtRepository;
 
 @DataJpaTest
 public class CbtRepositoryTest {
