@@ -1,12 +1,12 @@
 import React from 'react';
-import App from '../app/App';
 import { mount } from 'enzyme';
-import { NavBar } from '../features/dashboard/NavBar';
+import { NavBar } from '../../features/dashboard/NavBar';
 import { Provider } from 'react-redux';
-import { store } from '../store';
-import LoginModal from '../features/login/LoginModal';
-import Dashboard from '../features/dashboard/cbtDashboard/CbtDashboard';
-import Footer from '../features/dashboard/Footer';
+import { store } from '../../store';
+import LoginModal from '../../features/login/LoginModal';
+import Footer from '../../features/dashboard/Footer';
+import Dashboard from '../../features/dashboard/cbt/CbtDashboard';
+import App from '../../app/App';
 
 describe('App unit tests', () => {
   const wrapper = mount(

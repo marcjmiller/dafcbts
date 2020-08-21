@@ -8,7 +8,7 @@ describe('CbtReducer tests', () => {
     expect(result).toEqual(InitCbtState);
   });
 
-  it('should should load cbts when returned from the API', () => {
+  it('should load cbts when returned from the API', () => {
     const data = [
       new CbtModel(1, 'name1', 'description1', 'address1', 'source1'),
       new CbtModel(2, 'name2', 'description2', 'address2', 'source2'),

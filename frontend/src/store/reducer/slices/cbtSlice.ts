@@ -14,20 +14,20 @@ const initialState: CbtState = {
 };
 
 const cbtSlice = createSlice({
-    name: 'cbt',
-    initialState,
-    reducers: {
-      getCbtsSuccess(state, action: PayloadAction<CbtModel[]>) {
-        state.cbts = action.payload;
-        state.loading = false;
-      },
+  name: 'cbt',
+  initialState,
+  reducers: {
+    getCbtsSuccess(state, action: PayloadAction<CbtModel[]>) {
+      state.cbts = action.payload;
+      state.loading = false;
+    },
 
-      getCbtsFailed(state, action: PayloadAction<Error>) {
-        state.error = action.payload;
-        state.loading = false;
-      },
+    getCbtsFailed(state, action: PayloadAction<Error>) {
+      state.error = action.payload;
+      state.loading = false;
     },
   },
+},
 );
 
 export const { getCbtsSuccess, getCbtsFailed } = cbtSlice.actions;

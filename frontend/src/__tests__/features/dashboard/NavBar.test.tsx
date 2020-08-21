@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavBar } from '../features/dashboard/NavBar';
+import { NavBar } from '../../../features/dashboard/NavBar';
 import { mount } from 'enzyme';
 import { Typography } from '@material-ui/core';
-import { ThemeType } from '../resources/types';
-import LightbulbIcon from '../resources/icons/LightbulbIcon';
-import { store } from '../store';
+import { ThemeType } from '../../../resources/types';
+import LightbulbIcon from '../../../resources/icons/LightbulbIcon';
+import { store } from '../../../store';
 import { Provider } from 'react-redux';
-import MenuIcon from '../resources/icons/MenuIcon';
+import MenuIcon from '../../../resources/icons/MenuIcon';
 
 describe('NavBar unit tests', () => {
   const themeType = ThemeType.DARK;

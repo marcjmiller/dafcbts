@@ -5,9 +5,10 @@ import { cbtStyles } from '../../resources/theme';
 
 interface MyProps {
   cbt: CbtModel;
+  handleViewCbt: (cbtId: number) => void;
 }
 
-const CbtCard: React.FC<MyProps> = ({ cbt }) => {
+const CbtCard: React.FC<MyProps> = ({ cbt, handleViewCbt }) => {
   const { cardContent, cardHeader, cardAvatar, card, cardVisible, cardHidden, cardButtonContainer } = cbtStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -46,8 +47,8 @@ const CbtCard: React.FC<MyProps> = ({ cbt }) => {
           >
             Take this CBT
           </Button>
-          <Button size='small' color='primary' variant='contained'>
-            View Answers
+          <Button className={`view-cbt-button-${cbt.id}`} size='small' color='primary' variant='contained' onClick={() => handleViewCbt(cbt.id)}>
+            View CBT
           </Button>
         </div>
       </CardActions>
