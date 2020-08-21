@@ -36,5 +36,5 @@ Scenario('I see cards loaded with CBTs', (I) => {
     I.see('Test CBT Please Ignore', '.cbt-card--container');
     I.see('Its a test', '.cbt-card--content');
     I.see('VIEW ANSWERS', '.cbt-card--button-container');
-    I.see('Take this CBT', '.cbt-card--button-container');
+    I.see('TAKE THIS CBT', '.cbt-card--button-container');
 });

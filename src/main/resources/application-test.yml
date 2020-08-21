@@ -1,6 +1,10 @@
 spring:
+  jpa:
+    properties:
+      hibernate:
+        show_sql: false
   main:
-    banner-mode: off
+    banner-mode: "off"
   profiles:
     active: @spring.profiles.active@
   datasource:
@@ -14,7 +18,5 @@ spring:
       enabled: always
 logging:
  level:
-   ROOT: ERROR
+   root: OFF
    org.springframework: OFF
-   org.hibernate: OFF
-   org.hibernate.SQL: OFF
