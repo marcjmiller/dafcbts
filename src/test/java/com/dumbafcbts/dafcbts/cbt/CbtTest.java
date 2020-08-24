@@ -13,7 +13,7 @@ public class CbtTest {
   @BeforeEach
   public void setupTests() {
     cbt = new Cbt(
-        0,
+        0L,
         "Name",
         "Description",
         "Web Address",

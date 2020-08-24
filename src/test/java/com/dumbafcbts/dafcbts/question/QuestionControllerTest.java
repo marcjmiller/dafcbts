@@ -2,12 +2,14 @@ package com.dumbafcbts.dafcbts.question;
 
 import com.dumbafcbts.dafcbts.BaseIntegrationTest;
 
+import static io.restassured.RestAssured.given;
+
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+
 
 public class QuestionControllerTest extends BaseIntegrationTest {
-  @Autowired
-  private QuestionRepository questionRepository;
+  // @Autowired
+  // private QuestionRepository questionRepository;
 
   @Test
   void getQuestionsReturnsProperStatusCode() {
@@ -15,7 +17,7 @@ public class QuestionControllerTest extends BaseIntegrationTest {
     .port(port)
     .header("Content-Type", "application/json")
     .when()
-    .get(QuestionController.URI)
+    .get(QuestionController.URI + "questions?cbtId=2")
     .then()
     .statusCode(200);
   }
