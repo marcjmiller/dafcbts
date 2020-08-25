@@ -5,8 +5,8 @@ import { Provider } from 'react-redux';
 import { store } from '../../store';
 import LoginModal from '../../features/login/LoginModal';
 import Footer from '../../features/dashboard/Footer';
-import Dashboard from '../../features/dashboard/cbt/CbtDashboard';
 import App from '../../app/App';
+import DashboardContainer from '../../features/dashboard/DashboardContainer';
 
 describe('App unit tests', () => {
   const wrapper = mount(
@@ -26,8 +26,8 @@ describe('App unit tests', () => {
     expect(wrapper.find(LoginModal).exists()).toBeTruthy();
   });
 
-  it('should render the dashboard', () => {
-    expect(wrapper.find(Dashboard).exists()).toBeTruthy();
+  it('should render the dashboard container', () => {
+    expect(wrapper.find(DashboardContainer).exists()).toBeTruthy();
   });
 
   it('should render the footer', () => {

@@ -103,34 +103,40 @@ export const baseStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const cbtStyles = makeStyles({
-  cardContent: {
+export const cardStyles = makeStyles({
+  content: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'flex-start'
   },
-  cardAvatar: {
+  avatar: {
     backgroundColor: '#f44336'
   },
-  card: {
+  cbtCard: {
     minWidth: '350px',
     maxWidth: '350px',
     margin: 16,
     padding: 8
   },
-  cardHeader: {
+  questionCard: {
+    minWidth: '650px',
+    maxWidth: '650px',
+    margin: 16,
+    padding: 8
+  },
+  header: {
     padding: '8px !important',
   },
-  cardVisible: {
+  visible: {
     transition: 'opacity 0.5s',
     opacity: 1,
   },
-  cardHidden: {
+  hidden: {
     opacity: 0,
     pointerEvents: 'none',
   },
-  cardButtonContainer: {
+  buttonContainer: {
     width: '100%',
     display: 'flex',
     flexDirection: 'row',

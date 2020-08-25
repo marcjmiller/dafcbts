@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { CbtModel } from '../../models/CbtModel';
+import { CbtModel } from '../../../models/CbtModel';
 import { Card, CardContent, Typography, CardActions, Button, Avatar, CardHeader } from '@material-ui/core';
-import { cbtStyles } from '../../resources/theme';
+import { cardStyles } from '../../../resources/theme';
 
 interface MyProps {
   cbt: CbtModel;
@@ -9,7 +9,7 @@ interface MyProps {
 }
 
 const CbtCard: React.FC<MyProps> = ({ cbt, handleViewCbt }) => {
-  const { cardContent, cardHeader, cardAvatar, card, cardVisible, cardHidden, cardButtonContainer } = cbtStyles();
+  const { content, header, avatar, cbtCard, visible, hidden, buttonContainer } = cardStyles();
 
   const [open, setOpen] = React.useState(false);
 
@@ -21,22 +21,22 @@ const CbtCard: React.FC<MyProps> = ({ cbt, handleViewCbt }) => {
   }, []);
 
   return (
-    <Card className={`cbt-card--container ${card} ${open ? cardVisible : cardHidden}`} raised>
+    <Card className={`cbt-card--container ${cbtCard} ${open ? visible : hidden}`} raised>
       <CardHeader
-        className={cardHeader}
-        avatar={<Avatar className={cardAvatar}>{cbt.name.slice(0, 1).toUpperCase()}</Avatar>}
+        className={header}
+        avatar={<Avatar className={avatar}>{cbt.name.slice(0, 1).toUpperCase()}</Avatar>}
         title={cbt.name}
         titleTypographyProps={{
           variant: 'h5',
         }}
       />
-      <CardContent className={`cbt-card--content ${cardContent}`}>
+      <CardContent className={`cbt-card--content ${content}`}>
         <Typography variant='body2' color='textSecondary' component='p'>
           {cbt.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <div className={`cbt-card--button-container ${cardButtonContainer}`}>
+        <div className={`cbt-card--button-container ${buttonContainer}`}>
           <Button
             size='small'
             color='primary'

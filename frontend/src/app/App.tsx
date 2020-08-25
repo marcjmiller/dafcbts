@@ -8,13 +8,12 @@ import { AuthStep } from '../store/reducer/slices/authSlice';
 import LoginModal from '../features/login/LoginModal';
 import Footer from '../features/dashboard/Footer';
 import { baseStyles } from '../resources/theme';
-import Dashboard from '../features/dashboard/cbt/CbtDashboard';
+import DashboardContainer from '../features/dashboard/DashboardContainer';
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
 
   const { themeType } = useSelector((state: RootState) => state.theme);
-
   const { authStep } = useSelector((state: RootState) => state.auth);
 
   const muiTheme = createMuiTheme({
@@ -35,7 +34,7 @@ const App: React.FC = () => {
       <CssBaseline />
       <div className={classes.app}>
         <NavBar themeType={themeType} toggleTheme={toggleTheme} />
-        <Dashboard />
+        <DashboardContainer />
         <Footer />
         <LoginModal display={isLoggingIn} />
       </div>

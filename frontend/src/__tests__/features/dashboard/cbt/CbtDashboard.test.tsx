@@ -1,11 +1,11 @@
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import React from 'react';
 import { store } from '../../../../store';
 import { getCbtsSuccess } from '../../../../store/reducer/slices/cbtSlice';
 import { CbtModel } from '../../../../models/CbtModel';
 import { Provider } from 'react-redux';
-import Dashboard from '../../../../features/dashboard/cbt/CbtDashboard';
-import CbtCard from '../../../../features/cbts/CbtCard';
+import CbtDashboard from '../../../../features/dashboard/cbt/CbtDashboard';
+import CbtCard from '../../../../features/cards/cbt/CbtCard';
 
 describe('CBT Card Tests', () => {
   it('Should render Cbt cards for each Cbt from the backend', () => {
@@ -18,7 +18,7 @@ describe('CBT Card Tests', () => {
 
     const testSubject = mount(
       <Provider store={store}>
-        <Dashboard />
+        <CbtDashboard handleViewQuestions={jest.fn}/>
       </Provider>,
     );
 

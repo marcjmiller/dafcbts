@@ -1,7 +1,7 @@
 import { shallow } from "enzyme";
 import React from "react";
-import { CbtModel } from "../../../models/CbtModel";
-import CbtCard from "../../../features/cbts/CbtCard";
+import { CbtModel } from "../../../../models/CbtModel";
+import CbtCard from "../../../../features/cards/cbt/CbtCard";
 import { CardHeader, Button } from "@material-ui/core";
 
 
@@ -30,5 +30,4 @@ describe("CBT Card Tests", () => {
     
     expect(handleViewCbtSpy).toHaveBeenCalledWith(1);
   })
-  
 });
